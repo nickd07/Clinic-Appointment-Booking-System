@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pediatrician Booking</title>
+        <style>
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        body {
+            font-family: Bookman Old Style;
+            margin: 20px;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: black;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        input, textarea, button {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid silver;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: silver;
+            outline: none;
+        }
+
+        button {
+            max-width: 60%;
+            background-color: grey;
+            color: black;
+            border: 1px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .back-button {
+            background-color: grey;
+            margin-top: 10px;
+        }
+
+        .back-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Book an Appointment with a Pediatrician</h1>
+     <!-- Error Message -->
+    <div class="error" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+    
+    <form th:action="@{/submit-appointment}" method="post">
+        <label for="name">Patient Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <br><br>
+
+        <label for="contact">Contact Information:</label>
+        <input type="text" id="contact" name="contact" required pattern="(\+1)?\d{10}">
+        <br><br>
+
+        <label for="date">Appointment Date:</label>
+        <input type="date" id="date" name="date" required>
+        <br><br>
+
+        <label for="time">Appointment Time:</label>
+        <input type="time" id="time" name="time" required>
+        <br><br>
+
+        <label for="reason">Reason for Visit:</label>
+        <textarea id="reason" name="reason" maxlength="500" placeholder="Max 500 characters." required></textarea>
+        <br><br>
+
+        <label for="insurance">Insurance Details:</label>
+        <input type="text" id="insurance" name="insurance" pattern="\d{13}" required>
+        <br><br>
+
+        <div class="button-container">
+            <button type="submit">Submit</button>
+            <br><br>
+            <button type="button" onclick="navigateToHome()">Back to Homepage</button>
+        </div>
+    </form>
+    
+    <script>
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+    </script>
+
+    <script>
+        function navigateToHome() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

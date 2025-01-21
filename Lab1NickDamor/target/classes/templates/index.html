@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Clinic Appointment Booking Portal</title>
+   <style>
+        body {
+            font-family: High Tower Text;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: gray;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: gray;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background-color: white;
+            transform: scale(1.05);
+            color: black;
+        }
+
+        a:active {
+            background-color: #1c598a;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <h1>Clinic Appointment Booking Portal</h1>
+    <ul>
+        <li><a th:href="@{/general-practitioner}">General Practitioner</a></li>
+        <li><a th:href="@{/specialist}">Specialist</a></li>
+        <li><a th:href="@{/pediatrician}">Pediatrician</a></li>
+        <li><a th:href="@{/dentist}">Dentist</a></li>
+    </ul>
+</body>
+</html>

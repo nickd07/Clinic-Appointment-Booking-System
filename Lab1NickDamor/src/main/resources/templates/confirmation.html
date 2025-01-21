@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Appointment Confirmation</title>
+    <style>
+        body {
+            font-family: High Tower Text;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: gray;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: white;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: gray;
+        }
+
+        span {
+            font-weight: bold;
+            color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: gray;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: white;
+            transform: scale(1.05);
+            color: black;
+        }
+
+        button:active {
+            background-color: #1c598a;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Appointment Confirmed</h1>
+    <p>Thank you, <span th:text="${name}"></span>. Your appointment is scheduled for <span th:text="${date}"></span> at <span th:text="${time}"></span>.</p>
+    <p>Reason: <span th:text="${reason} ?: 'N/A'"></span></p>
+    <p>Insurance: <span th:text="${insurance} ?: 'N/A'"></span></p>
+    
+    <br>
+    <button onclick="navigateToHome()">Back to Homepage</button>
+
+    <script>
+        function navigateToHome() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+
+</html>
