@@ -1,2 +1,15 @@
-# Clinic-Appointment-Booking-System
-A Spring Boot application for booking clinic appointments. Features a homepage with consultation categories and dedicated booking forms. Users can input patient details, appointment date/time, and reason for visit. Includes form validation and backend processing to store data efficiently
+# Clinic Appointment Booking System  
+
+A Spring Boot application for booking clinic appointments with a homepage listing consultation categories and detailed booking forms for patients.  
+
+## How to Run the Project  
+
+### Prerequisites  
+- Install **JDK 8+**  
+- Install **Maven**  
+- Use an IDE like IntelliJ IDEA or Eclipse  
+
+### Steps  
+1. **Clone the Repository**  
+   ```bash  
+   git clone https://github.com/your-username/clinic-appointment-system.git  
